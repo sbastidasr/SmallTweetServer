@@ -19,11 +19,12 @@ var T = new Twit({
 
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/:word', function (req, res) {
+app.get('search/:word', function (req, res) {
   T.get('search/tweets', { q: '#'+req.params.word, count: 100 }, function(err, data, response) {
-    res.json(data)
+    res.jsonp(data)
   })
 })
+
 
 //
 //  tweet 'hello world!'
