@@ -28,8 +28,4 @@ app.get('/:word', function (req, res) {
 //
 //  tweet 'hello world!'
 //
-
-
-app.listen(3000, function() {
-  console.log('listening');
-});
+app.listen(process.env.PORT || 3000)
